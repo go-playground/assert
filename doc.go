@@ -8,6 +8,7 @@ validations.
 	import (
 		"errors"
 		"testing"
+		. "gopkg.in/bluesuncorp/assert.v1"
 	)
 
 	func AssertCustomErrorHandler(t *testing.T, errs map[string]string, key, expected string) {
