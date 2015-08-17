@@ -39,6 +39,11 @@ func TestBasicAllGood(t *testing.T) {
 	PanicMatches(t, func() { fn() }, "omg omg omg!")
 	PanicMatches(t, func() { panic("omg omg omg!") }, "omg omg omg!")
 
+	/* if you uncomment creates hard fail, that is expected
+	// you cant really do this, but it is here for the sake of completeness
+	fun := func() {}
+	PanicMatches(t, func() { fun() }, "omg omg omg!")
+	*/
 	errs := map[string]string{}
 	errs["Name"] = "User Name Invalid"
 	errs["Email"] = "User Email Invalid"
