@@ -121,7 +121,7 @@ func PanicMatchesSkip(t *testing.T, skip int, fn func(), matches string) {
 				t.FailNow()
 			}
 		} else {
-			fmt.Printf("Panic expected, none found, expected [%v] ", matches)
+			fmt.Printf("%s:%d Panic Expected, none found...  expected [%s]", path.Base(file), line, matches)
 			t.FailNow()
 		}
 	}()
