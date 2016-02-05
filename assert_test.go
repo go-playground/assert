@@ -26,10 +26,10 @@ func MyCustomErrorHandler(t *testing.T, errs map[string]string, key, expected st
 func TestRegexMatchAndNotMatch(t *testing.T) {
 	goodRegex := "^(.*/vendor/)?github.com/go-playground/assert$"
 
-	MatchRegex(t, goodRegex, "github.com/go-playground/assert")
-	MatchRegex(t, goodRegex, "/vendor/github.com/go-playground/assert")
+	MatchRegex(t, "github.com/go-playground/assert", goodRegex)
+	MatchRegex(t, "/vendor/github.com/go-playground/assert", goodRegex)
 
-	NotMatchRegex(t, goodRegex, "/vendor/github.com/go-playground/test")
+	NotMatchRegex(t, "/vendor/github.com/go-playground/test", goodRegex)
 }
 
 func TestBasicAllGood(t *testing.T) {
