@@ -1,6 +1,7 @@
 Package assert
 ==============
 
+[![Build Status](https://travis-ci.org/go-playground/assert.svg?branch=master)](https://travis-ci.org/go-playground/assert)
 [![GoDoc](https://godoc.org/github.com/go-playground/assert?status.svg)](https://godoc.org/gopkg.in/go-playground/assert.v1)
 
 Package assert is a Basic Assertion library used along side native go testing
