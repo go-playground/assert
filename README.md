@@ -1,8 +1,7 @@
 Package assert
 ==============
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/d5e4f510-5e1e-48d9-b38b-f447f270a057/488336/badge.svg)](https://semaphoreci.com/joeybloggs/assert)
-[![GoDoc](https://godoc.org/gopkg.in/go-playground/assert.v1?status.svg)](https://godoc.org/gopkg.in/go-playground/assert.v1)
+[![GoDoc](https://godoc.org/github.com/go-playground/assert?status.svg)](https://godoc.org/gopkg.in/go-playground/assert.v1)
 
 Package assert is a Basic Assertion library used along side native go testing
 
@@ -11,20 +10,16 @@ Installation
 
 Use go get.
 
-	go get gopkg.in/go-playground/assert.v1
+	go get github.com/go-playground/assert
 
-or to update
+Then import the assert package into your own code.
 
-	go get -u gopkg.in/go-playground/assert.v1
-
-Then import the validator package into your own code.
-
-	import . "gopkg.in/go-playground/assert.v1"
+	import . "github.com/go-playground/assert/v2"
 
 Usage and documentation
 ------
 
-Please see http://godoc.org/gopkg.in/go-playground/assert.v1 for detailed usage docs.
+Please see http://godoc.org/github.com/go-playground/assert for detailed usage docs.
 
 ##### Example:
 ```go
@@ -33,7 +28,7 @@ package whatever
 import (
 	"errors"
 	"testing"
-	. "gopkg.in/go-playground/assert.v1"
+	. "github.com/go-playground/assert/v2"
 )
 
 func AssertCustomErrorHandler(t *testing.T, errs map[string]string, key, expected string) {

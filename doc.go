@@ -8,7 +8,7 @@ validations.
 	import (
 		"errors"
 		"testing"
-		. "gopkg.in/go-playground/assert.v1"
+		. "github.com/go-playground/assert.v1"
 	)
 
 	func AssertCustomErrorHandler(t *testing.T, errs map[string]string, key, expected string) {
