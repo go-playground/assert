@@ -72,7 +72,7 @@ How to Contribute
 ------
 Make a PR.
 
-I strongly encourage everyone whom creates a usefull custom assertion function to contribute them and
+I strongly encourage everyone whom creates a useful custom assertion function to contribute them and
 help make this package even better.
 
 License
