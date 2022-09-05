@@ -36,7 +36,7 @@ import (
 	. "gopkg.in/bluesuncorp/assert.v1"
 )
 
-func AssertCustomErrorHandler(t *testing.T, errs map[string]string, key, expected string) {
+func AssertCustomErrorHandler(t testing.TB, errs map[string]string, key, expected string) {
 	val, ok := errs[key]
 
 	// using EqualSkip and NotEqualSkip as building blocks for my custom Assert function
