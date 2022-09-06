@@ -32,7 +32,7 @@ import (
 	. "github.com/go-playground/assert/v2"
 )
 
-func AssertCustomErrorHandler(t *testing.T, errs map[string]string, key, expected string) {
+func AssertCustomErrorHandler(t testing.TB, errs map[string]string, key, expected string) {
 	val, ok := errs[key]
 
 	// using EqualSkip and NotEqualSkip as building blocks for my custom Assert function
