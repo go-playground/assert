@@ -1,6 +1,7 @@
 package assert
 
 import (
+	"errors"
 	"fmt"
 	"path"
 	"reflect"
@@ -165,6 +166,23 @@ func NotEqualSkip(t testing.TB, skip int, val1, val2 interface{}) {
 		fmt.Printf("%s:%d %v should not be equal %v\n", path.Base(file), line, val1, val2)
 		t.FailNow()
 	}
+}
+// IsErrorSkip validates that any error in err's chain matches target
+// and throws an error with line number
+// but the skip variable tells IsErrorSkip how far back on the stack to report the error.
+// This is a building block to creating your own more complex validation functions.
+func IsErrorSkip(t testing.TB, skip int, err, target error) {
+	if !errors.Is(err, target) {
+		_, file, line, _ := runtime.Caller(skip)
+		fmt.Printf("%s:%d %v does not is %v\n", path.Base(file), line, err, target)
+		t.FailNow()
+	}
+}
+
+// IsError validates that any error in err's chain matches target
+// and throws an error with line number
+func IsError(t testing.TB, err, target error) {
+	IsErrorSkip(t, 2, err, target)
 }
 
 // PanicMatches validates that the panic output of running fn matches the supplied string

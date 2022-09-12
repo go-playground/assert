@@ -3,6 +3,7 @@ package assert
 import (
 	"errors"
 	"testing"
+	"fmt"
 )
 
 // NOTES:
@@ -89,4 +90,10 @@ func TestEquals(t *testing.T) {
 	iface = 1
 	Equal(t, iface, 1)
 	NotEqual(t, iface, iface2)
+}
+
+func TestIsError(t *testing.T) {
+	err1 := errors.New("unknown error")
+	errWrapped := fmt.Errorf("another error: %w", err1)
+	IsError(t, errWrapped, err1)
 }
